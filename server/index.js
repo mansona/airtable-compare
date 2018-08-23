@@ -1,3 +1,4 @@
+const kueServer = require('./kueServer');
 const autoroute = require('express-autoroute');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -14,4 +15,5 @@ module.exports = function initialiseServer(app) {
     routesDir: path.join(__dirname, '/routes'),
     logger: winston,
   });
+  kueServer(app);
 };
